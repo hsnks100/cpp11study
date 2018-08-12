@@ -1,8 +1,8 @@
-#include 
-#include 
-#include 
-#include // for use shared_ptr, unique_ptr
-#include // for use tuple
+#include <iostream>
+#include <vector>
+#include <cstdio>
+#include <memory> // for use shared_ptr, unique_ptr
+#include <tuple> // for use tuple
 using namespace std;
 
 void setInit(int &a, int &b, int &c) {
