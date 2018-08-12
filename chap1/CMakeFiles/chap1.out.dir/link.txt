@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -w -O3 -DNDEBUG    -DRELEASE -DLINKER_FLAGS  -rdynamic CMakeFiles/chap1.out.dir/chap1.cpp.o  -o chap1.out 
