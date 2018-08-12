@@ -40,6 +40,12 @@ int main() {
     CHARACTER_CLASS cc = CHARACTER_CLASS::MONK;
     cout << (int)cc << endl; 
 
+    int* ggg = nullptr;
+
+
+
+
+
     return 0;
 }
 
