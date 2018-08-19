@@ -2,18 +2,23 @@
 #include <array>
 #include <unordered_map>
 #include <chrono>
+#include <thread>
+#include <mutex>
+#include <Windows.h>
 using namespace std;
 
 void Chapter04_array();
 // void Chapter5_forward_list(); // just single-linked-list (single <list>)
 void Chapter06_unordered_map(); // almost same with hash-map, but i don't know hash-map. So, i'll study this chapter personally...
 void Chapter07_chrono();
+void Chapter08_thread();
 
 
 int main() {
 	Chapter04_array();
 	Chapter06_unordered_map();
 	Chapter07_chrono();
+	Chapter08_thread();
 	return 0;
 }
 
@@ -36,15 +41,15 @@ void Chapter04_array() {
 
 void Chapter06_unordered_map() {
 	class Person {
-	public :
+	public:
 		int id, age;
-	public :
+	public:
 		Person(int id = 0, int age = 0) : id(id), age(age) {}
 		void set(int _id, int _age) {
 			id = _id; age = _age;
 		}
 	};
-	
+
 	unordered_map<int, Person> nameCards;
 	Person insertPerson;
 	insertPerson.set(930309, 26);
@@ -64,7 +69,7 @@ void Chapter06_unordered_map() {
 		cout << "id = " << (it->second).id << ", age = " << it->second.age << endl;
 	} // almost same with map too... (i think). auto sort..?
 
-	// find()
+	  // find()
 	auto it = nameCards.find(100);
 	if (it == nameCards.end()) {
 		cout << " fail to find 100 code person \n";
@@ -111,6 +116,68 @@ void Chapter07_chrono() {
 
 	// so many things, but i don't understand another things.......
 	// ex1. Why use H1 + H2?
-	
+
 	// GetTick used in SDL too!.. study later.....
+}
+
+void Chapter08_thread() {
+	// in my pc, sample code(without join) doesn't work....
+	thread thread1([]() {
+		for (int i = 0; i < 5; i++) {
+			cout << "thread 1 - " << i << endl;
+		}
+	});
+	thread1.join();
+
+	thread thread2;
+	thread2 = thread([]() {
+		for (int i = 10; i < 15; i++) {
+			cout << "thread 2 - " << i << endl;
+		}
+	});
+	thread2.join();
+
+	thread thread3 = thread([](int par) {
+		for (int i = 20; i < 25; i++) {
+			cout << "thread 3 - " << par << endl;
+		}
+	}, 4);
+	thread3.join();
+
+	mutex mtx_lock;
+	int threadRunCount1 = 0;
+
+	thread m_thread1;
+	m_thread1 = thread([&]() {
+		Sleep(100); // 1ms wait
+		for (int i = 0; i < 5; i++) {
+			threadRunCount1++;
+			mtx_lock.lock();
+			cout << "m_thread1's id = " << m_thread1.get_id() << endl;
+			mtx_lock.unlock();
+		}
+	});
+
+	int threadRunCount2 = 0;
+	thread m_thread2;
+	m_thread1 = thread([&]() {
+		Sleep(100); // 1ms wait
+		for (int i = 0; i < 5; i++) {
+			threadRunCount2++;
+			mtx_lock.lock();
+			cout << "m_thread2's id = " << m_thread1.get_id() << endl;
+			mtx_lock.unlock();
+		}
+	});
+
+	while (threadRunCount1 < 3 && threadRunCount2 < 3);
+
+	mtx_lock.lock();
+	cout << "swap 1, 2" << endl;
+	mtx_lock.unlock();
+
+	m_thread1.swap(m_thread2);
+	thread1.join();
+	thread2.join();
+
 }
