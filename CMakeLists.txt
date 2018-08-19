@@ -18,6 +18,12 @@ ADD_EXECUTABLE( chap1 chap1.cpp )
 ADD_EXECUTABLE( chap2 chap2.cpp )
 ADD_EXECUTABLE( chap2_2 chap2_2.cpp )
 ADD_EXECUTABLE( chap3 chap3.cpp )
+ADD_EXECUTABLE( chrono chrono.cpp )
+ADD_EXECUTABLE( thread thread.cpp )
+ADD_EXECUTABLE( mutex mutex.cpp )
+
+target_link_libraries(thread pthread)
+target_link_libraries(mutex pthread)
 
  
 SET ( CMAKE_CXX_FLAGS "-std=c++11 -w")
