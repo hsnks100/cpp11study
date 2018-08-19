@@ -17,6 +17,7 @@ SET ( CMAKE_EXE_LINKER_FLAGS " ")
 ADD_EXECUTABLE( chap1 chap1.cpp )
 ADD_EXECUTABLE( chap2 chap2.cpp )
 ADD_EXECUTABLE( chap2_2 chap2_2.cpp )
+ADD_EXECUTABLE( chap3 chap3.cpp )
 
  
 SET ( CMAKE_CXX_FLAGS "-std=c++11 -w")
