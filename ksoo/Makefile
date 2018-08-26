@@ -114,284 +114,164 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named mutex
+# Target rules for targets named future-test
 
 # Build rule for target.
-mutex: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mutex
-.PHONY : mutex
+future-test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 future-test
+.PHONY : future-test
 
 # fast build rule for target.
-mutex/fast:
-	$(MAKE) -f CMakeFiles/mutex.dir/build.make CMakeFiles/mutex.dir/build
-.PHONY : mutex/fast
+future-test/fast:
+	$(MAKE) -f CMakeFiles/future-test.dir/build.make CMakeFiles/future-test.dir/build
+.PHONY : future-test/fast
 
 #=============================================================================
-# Target rules for targets named chap2
+# Target rules for targets named pack
 
 # Build rule for target.
-chap2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 chap2
-.PHONY : chap2
+pack: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pack
+.PHONY : pack
 
 # fast build rule for target.
-chap2/fast:
-	$(MAKE) -f CMakeFiles/chap2.dir/build.make CMakeFiles/chap2.dir/build
-.PHONY : chap2/fast
+pack/fast:
+	$(MAKE) -f CMakeFiles/pack.dir/build.make CMakeFiles/pack.dir/build
+.PHONY : pack/fast
 
 #=============================================================================
-# Target rules for targets named chap3
+# Target rules for targets named async1
 
 # Build rule for target.
-chap3: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 chap3
-.PHONY : chap3
+async1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 async1
+.PHONY : async1
 
 # fast build rule for target.
-chap3/fast:
-	$(MAKE) -f CMakeFiles/chap3.dir/build.make CMakeFiles/chap3.dir/build
-.PHONY : chap3/fast
+async1/fast:
+	$(MAKE) -f CMakeFiles/async1.dir/build.make CMakeFiles/async1.dir/build
+.PHONY : async1/fast
 
 #=============================================================================
-# Target rules for targets named chrono
+# Target rules for targets named promise1
 
 # Build rule for target.
-chrono: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 chrono
-.PHONY : chrono
+promise1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 promise1
+.PHONY : promise1
 
 # fast build rule for target.
-chrono/fast:
-	$(MAKE) -f CMakeFiles/chrono.dir/build.make CMakeFiles/chrono.dir/build
-.PHONY : chrono/fast
+promise1/fast:
+	$(MAKE) -f CMakeFiles/promise1.dir/build.make CMakeFiles/promise1.dir/build
+.PHONY : promise1/fast
 
-#=============================================================================
-# Target rules for targets named thread
+async_future_01.o: async_future_01.cpp.o
 
-# Build rule for target.
-thread: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 thread
-.PHONY : thread
-
-# fast build rule for target.
-thread/fast:
-	$(MAKE) -f CMakeFiles/thread.dir/build.make CMakeFiles/thread.dir/build
-.PHONY : thread/fast
-
-#=============================================================================
-# Target rules for targets named chap1
-
-# Build rule for target.
-chap1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 chap1
-.PHONY : chap1
-
-# fast build rule for target.
-chap1/fast:
-	$(MAKE) -f CMakeFiles/chap1.dir/build.make CMakeFiles/chap1.dir/build
-.PHONY : chap1/fast
-
-#=============================================================================
-# Target rules for targets named chap2_2
-
-# Build rule for target.
-chap2_2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 chap2_2
-.PHONY : chap2_2
-
-# fast build rule for target.
-chap2_2/fast:
-	$(MAKE) -f CMakeFiles/chap2_2.dir/build.make CMakeFiles/chap2_2.dir/build
-.PHONY : chap2_2/fast
-
-chap1.o: chap1.cpp.o
-
-.PHONY : chap1.o
+.PHONY : async_future_01.o
 
 # target to build an object file
-chap1.cpp.o:
-	$(MAKE) -f CMakeFiles/chap1.dir/build.make CMakeFiles/chap1.dir/chap1.cpp.o
-.PHONY : chap1.cpp.o
+async_future_01.cpp.o:
+	$(MAKE) -f CMakeFiles/async1.dir/build.make CMakeFiles/async1.dir/async_future_01.cpp.o
+.PHONY : async_future_01.cpp.o
 
-chap1.i: chap1.cpp.i
+async_future_01.i: async_future_01.cpp.i
 
-.PHONY : chap1.i
+.PHONY : async_future_01.i
 
 # target to preprocess a source file
-chap1.cpp.i:
-	$(MAKE) -f CMakeFiles/chap1.dir/build.make CMakeFiles/chap1.dir/chap1.cpp.i
-.PHONY : chap1.cpp.i
+async_future_01.cpp.i:
+	$(MAKE) -f CMakeFiles/async1.dir/build.make CMakeFiles/async1.dir/async_future_01.cpp.i
+.PHONY : async_future_01.cpp.i
 
-chap1.s: chap1.cpp.s
+async_future_01.s: async_future_01.cpp.s
 
-.PHONY : chap1.s
+.PHONY : async_future_01.s
 
 # target to generate assembly for a file
-chap1.cpp.s:
-	$(MAKE) -f CMakeFiles/chap1.dir/build.make CMakeFiles/chap1.dir/chap1.cpp.s
-.PHONY : chap1.cpp.s
+async_future_01.cpp.s:
+	$(MAKE) -f CMakeFiles/async1.dir/build.make CMakeFiles/async1.dir/async_future_01.cpp.s
+.PHONY : async_future_01.cpp.s
 
-chap2.o: chap2.cpp.o
+future-test.o: future-test.cpp.o
 
-.PHONY : chap2.o
+.PHONY : future-test.o
 
 # target to build an object file
-chap2.cpp.o:
-	$(MAKE) -f CMakeFiles/chap2.dir/build.make CMakeFiles/chap2.dir/chap2.cpp.o
-.PHONY : chap2.cpp.o
+future-test.cpp.o:
+	$(MAKE) -f CMakeFiles/future-test.dir/build.make CMakeFiles/future-test.dir/future-test.cpp.o
+.PHONY : future-test.cpp.o
 
-chap2.i: chap2.cpp.i
+future-test.i: future-test.cpp.i
 
-.PHONY : chap2.i
+.PHONY : future-test.i
 
 # target to preprocess a source file
-chap2.cpp.i:
-	$(MAKE) -f CMakeFiles/chap2.dir/build.make CMakeFiles/chap2.dir/chap2.cpp.i
-.PHONY : chap2.cpp.i
+future-test.cpp.i:
+	$(MAKE) -f CMakeFiles/future-test.dir/build.make CMakeFiles/future-test.dir/future-test.cpp.i
+.PHONY : future-test.cpp.i
 
-chap2.s: chap2.cpp.s
+future-test.s: future-test.cpp.s
 
-.PHONY : chap2.s
+.PHONY : future-test.s
 
 # target to generate assembly for a file
-chap2.cpp.s:
-	$(MAKE) -f CMakeFiles/chap2.dir/build.make CMakeFiles/chap2.dir/chap2.cpp.s
-.PHONY : chap2.cpp.s
+future-test.cpp.s:
+	$(MAKE) -f CMakeFiles/future-test.dir/build.make CMakeFiles/future-test.dir/future-test.cpp.s
+.PHONY : future-test.cpp.s
 
-chap2_2.o: chap2_2.cpp.o
+packaged_task_01.o: packaged_task_01.cpp.o
 
-.PHONY : chap2_2.o
+.PHONY : packaged_task_01.o
 
 # target to build an object file
-chap2_2.cpp.o:
-	$(MAKE) -f CMakeFiles/chap2_2.dir/build.make CMakeFiles/chap2_2.dir/chap2_2.cpp.o
-.PHONY : chap2_2.cpp.o
+packaged_task_01.cpp.o:
+	$(MAKE) -f CMakeFiles/pack.dir/build.make CMakeFiles/pack.dir/packaged_task_01.cpp.o
+.PHONY : packaged_task_01.cpp.o
 
-chap2_2.i: chap2_2.cpp.i
+packaged_task_01.i: packaged_task_01.cpp.i
 
-.PHONY : chap2_2.i
+.PHONY : packaged_task_01.i
 
 # target to preprocess a source file
-chap2_2.cpp.i:
-	$(MAKE) -f CMakeFiles/chap2_2.dir/build.make CMakeFiles/chap2_2.dir/chap2_2.cpp.i
-.PHONY : chap2_2.cpp.i
+packaged_task_01.cpp.i:
+	$(MAKE) -f CMakeFiles/pack.dir/build.make CMakeFiles/pack.dir/packaged_task_01.cpp.i
+.PHONY : packaged_task_01.cpp.i
 
-chap2_2.s: chap2_2.cpp.s
+packaged_task_01.s: packaged_task_01.cpp.s
 
-.PHONY : chap2_2.s
+.PHONY : packaged_task_01.s
 
 # target to generate assembly for a file
-chap2_2.cpp.s:
-	$(MAKE) -f CMakeFiles/chap2_2.dir/build.make CMakeFiles/chap2_2.dir/chap2_2.cpp.s
-.PHONY : chap2_2.cpp.s
+packaged_task_01.cpp.s:
+	$(MAKE) -f CMakeFiles/pack.dir/build.make CMakeFiles/pack.dir/packaged_task_01.cpp.s
+.PHONY : packaged_task_01.cpp.s
 
-chap3.o: chap3.cpp.o
+promise_01.o: promise_01.cpp.o
 
-.PHONY : chap3.o
+.PHONY : promise_01.o
 
 # target to build an object file
-chap3.cpp.o:
-	$(MAKE) -f CMakeFiles/chap3.dir/build.make CMakeFiles/chap3.dir/chap3.cpp.o
-.PHONY : chap3.cpp.o
+promise_01.cpp.o:
+	$(MAKE) -f CMakeFiles/promise1.dir/build.make CMakeFiles/promise1.dir/promise_01.cpp.o
+.PHONY : promise_01.cpp.o
 
-chap3.i: chap3.cpp.i
+promise_01.i: promise_01.cpp.i
 
-.PHONY : chap3.i
-
-# target to preprocess a source file
-chap3.cpp.i:
-	$(MAKE) -f CMakeFiles/chap3.dir/build.make CMakeFiles/chap3.dir/chap3.cpp.i
-.PHONY : chap3.cpp.i
-
-chap3.s: chap3.cpp.s
-
-.PHONY : chap3.s
-
-# target to generate assembly for a file
-chap3.cpp.s:
-	$(MAKE) -f CMakeFiles/chap3.dir/build.make CMakeFiles/chap3.dir/chap3.cpp.s
-.PHONY : chap3.cpp.s
-
-chrono.o: chrono.cpp.o
-
-.PHONY : chrono.o
-
-# target to build an object file
-chrono.cpp.o:
-	$(MAKE) -f CMakeFiles/chrono.dir/build.make CMakeFiles/chrono.dir/chrono.cpp.o
-.PHONY : chrono.cpp.o
-
-chrono.i: chrono.cpp.i
-
-.PHONY : chrono.i
+.PHONY : promise_01.i
 
 # target to preprocess a source file
-chrono.cpp.i:
-	$(MAKE) -f CMakeFiles/chrono.dir/build.make CMakeFiles/chrono.dir/chrono.cpp.i
-.PHONY : chrono.cpp.i
+promise_01.cpp.i:
+	$(MAKE) -f CMakeFiles/promise1.dir/build.make CMakeFiles/promise1.dir/promise_01.cpp.i
+.PHONY : promise_01.cpp.i
 
-chrono.s: chrono.cpp.s
+promise_01.s: promise_01.cpp.s
 
-.PHONY : chrono.s
-
-# target to generate assembly for a file
-chrono.cpp.s:
-	$(MAKE) -f CMakeFiles/chrono.dir/build.make CMakeFiles/chrono.dir/chrono.cpp.s
-.PHONY : chrono.cpp.s
-
-mutex.o: mutex.cpp.o
-
-.PHONY : mutex.o
-
-# target to build an object file
-mutex.cpp.o:
-	$(MAKE) -f CMakeFiles/mutex.dir/build.make CMakeFiles/mutex.dir/mutex.cpp.o
-.PHONY : mutex.cpp.o
-
-mutex.i: mutex.cpp.i
-
-.PHONY : mutex.i
-
-# target to preprocess a source file
-mutex.cpp.i:
-	$(MAKE) -f CMakeFiles/mutex.dir/build.make CMakeFiles/mutex.dir/mutex.cpp.i
-.PHONY : mutex.cpp.i
-
-mutex.s: mutex.cpp.s
-
-.PHONY : mutex.s
+.PHONY : promise_01.s
 
 # target to generate assembly for a file
-mutex.cpp.s:
-	$(MAKE) -f CMakeFiles/mutex.dir/build.make CMakeFiles/mutex.dir/mutex.cpp.s
-.PHONY : mutex.cpp.s
-
-thread.o: thread.cpp.o
-
-.PHONY : thread.o
-
-# target to build an object file
-thread.cpp.o:
-	$(MAKE) -f CMakeFiles/thread.dir/build.make CMakeFiles/thread.dir/thread.cpp.o
-.PHONY : thread.cpp.o
-
-thread.i: thread.cpp.i
-
-.PHONY : thread.i
-
-# target to preprocess a source file
-thread.cpp.i:
-	$(MAKE) -f CMakeFiles/thread.dir/build.make CMakeFiles/thread.dir/thread.cpp.i
-.PHONY : thread.cpp.i
-
-thread.s: thread.cpp.s
-
-.PHONY : thread.s
-
-# target to generate assembly for a file
-thread.cpp.s:
-	$(MAKE) -f CMakeFiles/thread.dir/build.make CMakeFiles/thread.dir/thread.cpp.s
-.PHONY : thread.cpp.s
+promise_01.cpp.s:
+	$(MAKE) -f CMakeFiles/promise1.dir/build.make CMakeFiles/promise1.dir/promise_01.cpp.s
+.PHONY : promise_01.cpp.s
 
 # Help Target
 help:
@@ -401,34 +281,22 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... mutex"
-	@echo "... chap2"
-	@echo "... chap3"
-	@echo "... chrono"
-	@echo "... thread"
-	@echo "... chap1"
-	@echo "... chap2_2"
-	@echo "... chap1.o"
-	@echo "... chap1.i"
-	@echo "... chap1.s"
-	@echo "... chap2.o"
-	@echo "... chap2.i"
-	@echo "... chap2.s"
-	@echo "... chap2_2.o"
-	@echo "... chap2_2.i"
-	@echo "... chap2_2.s"
-	@echo "... chap3.o"
-	@echo "... chap3.i"
-	@echo "... chap3.s"
-	@echo "... chrono.o"
-	@echo "... chrono.i"
-	@echo "... chrono.s"
-	@echo "... mutex.o"
-	@echo "... mutex.i"
-	@echo "... mutex.s"
-	@echo "... thread.o"
-	@echo "... thread.i"
-	@echo "... thread.s"
+	@echo "... future-test"
+	@echo "... pack"
+	@echo "... async1"
+	@echo "... promise1"
+	@echo "... async_future_01.o"
+	@echo "... async_future_01.i"
+	@echo "... async_future_01.s"
+	@echo "... future-test.o"
+	@echo "... future-test.i"
+	@echo "... future-test.s"
+	@echo "... packaged_task_01.o"
+	@echo "... packaged_task_01.i"
+	@echo "... packaged_task_01.s"
+	@echo "... promise_01.o"
+	@echo "... promise_01.i"
+	@echo "... promise_01.s"
 .PHONY : help
 
 
