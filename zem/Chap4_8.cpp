@@ -4,7 +4,6 @@
 #include <chrono>
 #include <thread>
 #include <mutex>
-#include <Windows.h>
 using namespace std;
 
 void Chapter04_array();
@@ -18,7 +17,7 @@ int main() {
 	Chapter04_array();
 	Chapter06_unordered_map();
 	Chapter07_chrono();
-	Chapter08_thread();
+	//Chapter08_thread();
 	return 0;
 }
 
@@ -143,13 +142,12 @@ void Chapter08_thread() {
 		}
 	}, 4);
 	thread3.join();
-
 	mutex mtx_lock;
 	int threadRunCount1 = 0;
 
 	thread m_thread1;
 	m_thread1 = thread([&]() {
-		Sleep(100); // 1ms wait
+        for(int i=0; i<10000000; i++);
 		for (int i = 0; i < 5; i++) {
 			threadRunCount1++;
 			mtx_lock.lock();
@@ -161,7 +159,7 @@ void Chapter08_thread() {
 	int threadRunCount2 = 0;
 	thread m_thread2;
 	m_thread1 = thread([&]() {
-		Sleep(100); // 1ms wait
+        for(int i=0; i<10000000; i++);
 		for (int i = 0; i < 5; i++) {
 			threadRunCount2++;
 			mtx_lock.lock();
@@ -179,5 +177,4 @@ void Chapter08_thread() {
 	m_thread1.swap(m_thread2);
 	thread1.join();
 	thread2.join();
-
 }
