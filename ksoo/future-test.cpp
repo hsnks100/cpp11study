@@ -3,22 +3,30 @@
 #include <iostream>
  
 #include <chrono>
+#include <vector>
 void taskLongTime(std::function<void(void)> callback) {
-    std::thread([callback]() {
-        std::future<int> f = std::async([]()->int {
+    
+    std::vector<std::future<void>>  futures;
+    futures.push_back(
+        std::async([callback]()->void {
             std::this_thread::sleep_for(std::chrono::seconds(3));
-            return 1;
-        });
+            callback();
+        }));
 
-        f.get();
-        callback(); 
-    }).detach();
-}
-void taskLongTime2(std::function<void(void)> callback) {
-    std::thread([callback]() {
-        std::this_thread::sleep_for(std::chrono::seconds(3));
-        callback(); 
-    }).detach();
+    futures.push_back(
+        std::async([]()->void {
+        std::this_thread::sleep_for(std::chrono::seconds(5));
+        printf("...1!!\n");
+    }));
+    futures.push_back(
+        std::async([]()->void {
+        std::this_thread::sleep_for(std::chrono::seconds(7));
+        printf("...2!!\n");
+    }));
+
+    for(auto const& i: futures) {
+        i.get();
+    } 
 }
  
 
@@ -60,9 +68,6 @@ int main()
 {
     taskLongTime([]() {
         printf("complete\n");
-    });
-    taskLongTime2([]() {
-        printf("complete2\n");
     });
 
 	std::future<std::string> resultFromDB = std::async(std::launch::async, fetchDataFromDB, "Data");
